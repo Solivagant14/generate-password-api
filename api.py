@@ -10,7 +10,7 @@ def index():
 
 @app.get("/generate")
 def generate(digit=False,uppercase=False,schar=True,length=12):
-    return {'response': generate_password(digit,uppercase,schar,length)}
+    return {'password': generate_password(digit,uppercase,schar,length)}
 
 if __name__=='__main__':
     uvicorn.run(app,host='0.0.0.0',port=10000)
