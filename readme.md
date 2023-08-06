@@ -4,4 +4,4 @@
 
 ### Start Command : 
 
-> uvicorn api:app --reload
+`uvicorn api:app --reload`
