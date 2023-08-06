@@ -1,3 +1,3 @@
 ### run : 
 
-> uvicorn run:app --reload
+> uvicorn api:app --reload
