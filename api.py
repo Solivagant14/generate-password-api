@@ -18,7 +18,7 @@ def index():
     return {'message': "Hello,Dev Nishant"}
 
 @app.get("/generate")
-def generate(digit=False,uppercase=False,schar=True,length=12):
+def generate(digit:bool=False,uppercase:bool=False,schar:bool=False,length:int=12):
     return {'password': generate_password(digit,uppercase,schar,length)}
 
 if __name__=='__main__':
