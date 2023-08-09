@@ -1,35 +1,25 @@
 import secrets
 import string
 
-letters = string.ascii_letters
+letters = string.ascii_lowercase
 digits = string.digits
 schars = string.punctuation
 uppercases = string.ascii_uppercase 
-alphabet = letters + digits
 
-def generate_password(digit=False,uppercase=False,schar=True,length=12):
+def generate_password(digit=True,uppercase=True,schar=True,length=12):
+    generation_pool = letters
     length=int(length)
-    digit_index=uppercase_index=schar_index= -1     #index variable
     password = ''
 
-
-    while(digit_index == uppercase_index == schar_index):
-        if(digit):
-            digit_index=secrets.randbelow(length)
-        if(uppercase):
-            uppercase_index=secrets.randbelow(length)
-        if(schar):
-            schar_index=secrets.randbelow(length)
+    if digit:
+        generation_pool=generation_pool+digits
+    if uppercase:
+        generation_pool=generation_pool+uppercases
+    if schar:
+        generation_pool=generation_pool+schars
     
     for i in range(length):
-        if(i==digit_index):
-            password += ''.join(secrets.choice(digits))
-        elif(i==uppercase_index):
-            password += ''.join(secrets.choice(uppercases))
-        elif(i==schar_index):
-            password += ''.join(secrets.choice(schars))
-        else:
-            password += ''.join(secrets.choice(alphabet))
+        password += ''.join(secrets.choice(generation_pool))
 
     return password
 
