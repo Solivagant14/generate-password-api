@@ -1,14 +1,13 @@
 import secrets
 import string
 
-letters = string.ascii_lowercase
+lowecases = string.ascii_lowercase
 digits = string.digits
 schars = string.punctuation
 uppercases = string.ascii_uppercase 
 
 def generate_password(digit=True,uppercase=True,schar=True,length=12):
-    generation_pool = letters
-    length=int(length)
+    generation_pool = lowecases
     password = ''
 
     if digit:
